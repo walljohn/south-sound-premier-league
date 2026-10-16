@@ -303,7 +303,10 @@
     .lockup .wm{width:100%}
     td{padding:16px 10px;font-size:17px}
     td.result{font-size:20px}
-    th.rs,td.rs,th.ra,td.ra{display:none}
+    th.rs,td.rs,th.ra,td.ra,th.t,td.t,th.pct,td.pct{display:none}
+    td.club small{display:none}
+    td.rank{width:40px;font-size:24px}
+    td.num,th.num{padding-left:6px;padding-right:6px}
     .topbar .hide-s{display:none}
     .nav{gap:12px}
     .nav .btn{padding:11px 14px;font-size:14px}
@@ -866,15 +869,15 @@ $("#rhythm").innerHTML = RHYTHM.map(r => `
   const lead = rows[0];
   const anyPlayed = rows.some(r => r.w + r.l + r.tie > 0);
   $("#standings-body").innerHTML = `<table>
-    <thead><tr><th></th><th>Team</th><th class="num">W</th><th class="num">L</th><th class="num">T</th><th class="num">PCT</th><th class="num">GB</th><th class="num rs">RS</th><th class="num ra">RA</th></tr></thead>
+    <thead><tr><th></th><th>Team</th><th class="num">W</th><th class="num">L</th><th class="num t">T</th><th class="num pct">PCT</th><th class="num">GB</th><th class="num rs">RS</th><th class="num ra">RA</th></tr></thead>
     <tbody>${rows.map((r, i) => {
       const g = r.w + r.l + r.tie;
       const gb = anyPlayed ? ((lead.w - r.w) + (r.l - lead.l)) / 2 : 0;
       return `<tr class="${i === 0 && anyPlayed ? "lead" : ""}">
         <td class="rank">${i + 1}</td>
         <td class="club">${esc(r.t.name)}<small>Head coach ${esc(r.t.coach)}</small></td>
-        <td class="num">${r.w}</td><td class="num">${r.l}</td><td class="num">${r.tie}</td>
-        <td class="num">${g ? pct(r).toFixed(3).replace(/^0/, "") : "—"}</td>
+        <td class="num">${r.w}</td><td class="num">${r.l}</td><td class="num t">${r.tie}</td>
+        <td class="num pct">${g ? pct(r).toFixed(3).replace(/^0/, "") : "—"}</td>
         <td class="num">${!anyPlayed || gb === 0 ? "—" : gb % 1 ? gb.toFixed(1) : gb}</td>
         <td class="num rs">${r.rs}</td><td class="num ra">${r.ra}</td></tr>`;
     }).join("")}</tbody></table>
