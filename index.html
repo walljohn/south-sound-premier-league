@@ -414,9 +414,19 @@
       <rect width="1200" height="900" fill="#0E1F3D"/>
       <!-- red sun behind the peak -->
       <circle cx="600" cy="330" r="168" fill="#B8232F"/>
-      <!-- Rainier -->
-      <path d="M100,650 C290,575 420,440 515,325 C555,282 582,256 600,244 C618,256 645,282 685,325 C780,440 910,575 1100,650 Z" fill="#F4F0E6"/>
-      <path d="M600,244 C618,256 645,282 685,325 C780,440 910,575 1100,650 L600,650 Z" fill="#DDD6C4"/>
+      <!-- Rainier: broad glaciated dome, Liberty Cap on the left, Point Success on the right -->
+      <path d="M40,660 C190,622 300,540 380,440 C420,388 458,338 492,308 C503,298 516,298 524,306 C546,284 572,260 596,250 C610,245 626,245 640,252 C660,264 676,280 690,296 C699,288 711,290 720,300 C770,350 830,430 890,500 C960,580 1050,630 1160,660 Z" fill="#F4F0E6"/>
+      <path d="M618,246 C626,245 634,248 640,252 C660,264 676,280 690,296 C699,288 711,290 720,300 C770,350 830,430 890,500 C960,580 1050,630 1160,660 L618,660 Z" fill="#DDD6C4"/>
+      <g fill="#8A97AD" opacity=".42">
+        <path d="M590,264 C582,296 576,330 574,360 L581,359 C585,330 591,298 598,270 Z"/>
+        <path d="M644,266 C660,300 672,338 680,372 L672,374 C664,342 652,308 638,280 Z"/>
+        <path d="M556,290 C544,318 534,348 528,376 L535,377 C542,350 552,322 562,296 Z"/>
+        <path d="M520,322 C504,356 492,390 484,422 L492,423 C501,392 512,360 526,330 Z"/>
+        <path d="M712,316 C736,352 758,392 774,432 L766,435 C750,397 728,360 706,328 Z"/>
+        <path d="M752,352 C780,392 804,436 822,478 L814,481 C796,440 772,398 746,362 Z"/>
+        <path d="M444,392 C420,428 398,466 380,506 L388,508 C406,470 428,434 452,400 Z"/>
+        <path d="M402,446 C384,474 368,504 354,536 L361,538 C375,508 391,478 410,452 Z"/>
+      </g>
       <!-- ridgelines -->
       <path d="M0,660 L110,618 L220,648 L340,606 L460,644 L600,616 L740,648 L860,610 L980,644 L1090,612 L1200,640 L1200,700 L0,700 Z" fill="#2A4A7C"/>
       <path d="M0,690 L140,664 L290,686 L440,660 L600,684 L760,662 L910,686 L1060,664 L1200,682 L1200,730 L0,730 Z" fill="#1C3B6E"/>
@@ -438,17 +448,24 @@
         <path d="M540,772 h120 M560,806 h80 M580,842 h40" stroke="#B8232F" stroke-width="4" opacity=".75"/>
         <path d="M70,790 h110 M1010,784 h120 M160,850 h70 M960,846 h90" stroke="#F4F0E6" stroke-width="3" opacity=".28"/>
       </g>
-      <!-- the Narrows, as line work -->
+      <!-- the Narrows -->
+      <g stroke="#F4F0E6" stroke-linecap="round" opacity=".2" fill="none">
+        <path d="M0,758 H1200" stroke-width="6"/>
+        <path d="M382,758 v70 M406,758 v70 M794,758 v70 M818,758 v70" stroke-width="7"/>
+      </g>
       <g stroke="#F4F0E6" fill="#F4F0E6" stroke-linecap="round">
-        <rect x="383" y="596" width="10" height="150" stroke="none"/>
-        <rect x="807" y="596" width="10" height="150" stroke="none"/>
-        <rect x="376" y="590" width="24" height="6" stroke="none"/>
-        <rect x="800" y="590" width="24" height="6" stroke="none"/>
-        <path d="M0,742 H1200" stroke-width="5"/>
-        <path d="M388,598 Q600,724 812,598" stroke-width="2.5"/>
-        <path d="M388,598 Q240,680 90,740" stroke-width="2.5"/>
-        <path d="M812,598 Q960,680 1110,740" stroke-width="2.5"/>
-        <path d="M440,626 V740 M490,650 V740 M540,668 V740 M600,678 V740 M660,668 V740 M710,650 V740 M760,626 V740 M330,636 V740 M280,664 V740 M230,690 V740 M180,712 V740 M870,636 V740 M920,664 V740 M970,690 V740 M1020,712 V740" stroke-width="1.4"/>
+        <!-- towers: two legs with cross braces -->
+        <rect x="378" y="556" width="8" height="194" stroke="none"/><rect x="402" y="556" width="8" height="194" stroke="none"/>
+        <rect x="790" y="556" width="8" height="194" stroke="none"/><rect x="814" y="556" width="8" height="194" stroke="none"/>
+        <rect x="372" y="550" width="44" height="8" stroke="none"/><rect x="784" y="550" width="44" height="8" stroke="none"/>
+        <rect x="384" y="600" width="20" height="6" stroke="none"/><rect x="384" y="648" width="20" height="6" stroke="none"/><rect x="384" y="696" width="20" height="6" stroke="none"/>
+        <rect x="796" y="600" width="20" height="6" stroke="none"/><rect x="796" y="648" width="20" height="6" stroke="none"/><rect x="796" y="696" width="20" height="6" stroke="none"/>
+        <!-- deck and cables -->
+        <path d="M0,744 H1200" stroke-width="9"/>
+        <path d="M394,556 Q600,722 806,556" fill="none" stroke-width="4"/>
+        <path d="M394,556 Q230,660 50,740" fill="none" stroke-width="4"/>
+        <path d="M806,556 Q970,660 1150,740" fill="none" stroke-width="4"/>
+        <path d="M440,596 V740 M480,624 V740 M520,648 V740 M560,664 V740 M600,672 V740 M640,664 V740 M680,648 V740 M720,624 V740 M760,596 V740 M340,590 V740 M290,624 V740 M240,656 V740 M190,684 V740 M140,710 V740 M860,590 V740 M910,624 V740 M960,656 V740 M1010,684 V740 M1060,710 V740" stroke-width="2.2"/>
       </g>
     </symbol>
 
