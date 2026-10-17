@@ -172,7 +172,7 @@
   .step p{font-family:var(--serif);font-size:clamp(18px,1.5vw,22px);line-height:1.45;max-width:42ch}
 
   /* teams */
-  .teams{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--navy);border:1px solid var(--navy)}
+  .teams{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--navy);border:1px solid var(--navy)}
   .team{background:var(--cream);padding:clamp(28px,3vw,44px);min-height:380px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background .4s}
   .team:hover{background:var(--cream-2)}
   .team .idx{font-family:var(--serif);font-weight:600;color:var(--red);font-size:15px;letter-spacing:.1em}
@@ -211,6 +211,13 @@
   .empty p{font-family:var(--serif);font-size:19px;margin-top:14px;max-width:50ch}
   .empty .stamp{font-family:var(--varsity);color:var(--red);border:3px solid var(--red);padding:10px 16px;font-size:18px;transform:rotate(-4deg);letter-spacing:.06em}
   .table-note{font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:18px}
+  td.match .open{font-weight:400;font-style:italic;color:var(--mute)}
+  td.match .open .short{display:none}
+  .season-sum{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--navy);margin-bottom:clamp(28px,3vw,40px)}
+  .season-sum > div{padding:18px 22px;border-right:1px solid var(--navy)}
+  .season-sum > div:last-child{border-right:0}
+  .season-sum b{display:block;font-family:var(--display);font-size:clamp(26px,2.6vw,38px);line-height:1;color:var(--navy);font-weight:400;white-space:nowrap}
+  .season-sum span{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin-top:8px}
 
   /* fields */
   .fields{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--navy);border:1px solid var(--navy)}
@@ -285,6 +292,10 @@
     .pin .panel .fig .word{font-size:clamp(36px,10vw,56px)}
     .step{min-height:0;padding:56px 0}
     .teams,.fields,.rhythm{grid-template-columns:1fr}
+    .season-sum{grid-template-columns:1fr 1fr}
+    .season-sum > div{border-bottom:1px solid var(--navy)}
+    .season-sum > div:nth-child(2n){border-right:0}
+    .season-sum > div:nth-last-child(-n+2){border-bottom:0}
     .rhythm > div{border-right:0;border-bottom:1px solid var(--navy)}
     .rhythm > div:last-child{border-bottom:0}
     .join .inner{grid-template-columns:1fr}
@@ -306,6 +317,10 @@
     th.rs,td.rs,th.ra,td.ra,th.t,td.t,th.pct,td.pct{display:none}
     td.club small{display:none}
     td.rank{width:40px;font-size:24px}
+    td.match .open .long{display:none}
+    td.match .open .short{display:inline}
+    .season-sum b{font-size:22px;white-space:normal}
+    .season-sum > div{padding:14px 16px}
     td.num,th.num{padding-left:6px;padding-right:6px}
     .topbar .hide-s{display:none}
     .nav{gap:12px}
@@ -504,7 +519,7 @@
   <div class="copy">
     <div class="eyebrow"><span>South Sound Premier League · 18U · <span id="hero-season">Summer 2027</span></span></div>
     <h1 class="display">Summer baseball,<br>built for the<br><span class="r">South Sound.</span></h1>
-    <p>A 7–10 game weeknight league in Tacoma and Pierce County, run by the coaches who play in it. No league fee. Weekends left open for tournaments.</p>
+    <p>A 10-game weeknight league in Tacoma and Pierce County, run by the coaches who play in it. No league fee. Weekends left open for tournaments.</p>
     <div class="actions">
       <a class="btn" href="#schedule">See the schedule <span class="arr">↗</span></a>
       <a class="link" href="#league">How it works</a>
@@ -512,7 +527,7 @@
     <div class="facts">
       <span class="fact">No league fee</span>
       <span class="fact">Tuesday &amp; Thursday nights</span>
-      <span class="fact">7–10 games</span>
+      <span class="fact">10 games per team</span>
       <span class="fact">No weekend games</span>
     </div>
   </div>
@@ -530,7 +545,7 @@
 <div class="band">
   <span class="yr" id="band-year">2027</span>
   <span class="vr"></span>
-  <span class="t">Three teams. One summer. Weeknights in Tacoma.</span>
+  <span class="t">Two teams. Ten games each. Weeknights in Tacoma.</span>
   <a class="ghost" href="#standings">Standings <span>↗</span></a>
 </div>
 
@@ -543,11 +558,11 @@
     </div>
     <div class="side reveal" data-d="2"><span class="rule"></span><a class="link" href="#teams">Meet the teams <span class="arr">↗</span></a></div>
   </div>
-  <p class="lede reveal">The South Sound Premier League is an 18U summer league for Tacoma and Pierce County. Games are played on Tuesday and Thursday nights at Peck Field, Lincoln, and Fort Steilacoom. Seven to ten games a summer, no league fee, and weekends kept open for tournaments. <em>It is run by the coaches whose teams play in it.</em></p>
+  <p class="lede reveal">The South Sound Premier League is an 18U summer league for Tacoma and Pierce County. Games are played on Tuesday and Thursday nights at Peck Field, Lincoln, and Fort Steilacoom. Ten games a team from mid-May through July, no league fee, and weekends kept open for tournaments. <em>It is run by the coaches whose teams play in it.</em></p>
 
   <div class="stats">
     <div class="stat reveal"><div class="n">$0</div><div class="d">League fee</div></div>
-    <div class="stat reveal" data-d="1"><div class="n">7<small>to</small>10</div><div class="d">Games per summer</div></div>
+    <div class="stat reveal" data-d="1"><div class="n">10</div><div class="d">Games per team</div></div>
     <div class="stat reveal" data-d="2"><div class="n">Tue<small>&amp;</small>Thu</div><div class="d">Primary game nights</div></div>
     <div class="stat reveal" data-d="3"><div class="n">0</div><div class="d">Weekend games</div></div>
   </div>
@@ -566,7 +581,7 @@
     <div class="reason reveal">
       <div class="was">Schedule</div>
       <h3>Weeknights only</h3>
-      <p>Tuesday and Thursday nights, seven to ten games a summer. Weekends belong to tournaments.</p>
+      <p>Tuesday and Thursday nights, ten games a team from May 18 to July 22. Weekends belong to tournaments.</p>
     </div>
     <div class="reason reveal" data-d="1">
       <div class="was">Leadership</div>
@@ -618,7 +633,7 @@
           <div class="d tourney"><i>SAT</i><b>S</b><em>Tourney</em></div>
           <div class="d tourney"><i>SUN</i><b>S</b><em>Tourney</em></div>
         </div>
-        <div class="vf"><span>7–10 games a summer</span><span>0 weekends</span></div>
+        <div class="vf"><span>10 games a team</span><span>0 weekends</span></div>
       </div>
       <div class="eyebrow">How it works</div><div class="word">Play on<br><span class="r">weeknights.</span></div>
     </div>
@@ -630,7 +645,6 @@
         <div class="rw hd"><span></span><span>Team</span><span class="c">W</span><span class="c">L</span></div>
         <div class="rw"><span class="n">1</span><span>Premier</span><span class="c">–</span><span class="c">–</span></div>
         <div class="rw"><span class="n">2</span><span>College Prep</span><span class="c">–</span><span class="c">–</span></div>
-        <div class="rw"><span class="n">3</span><span>Prospects</span><span class="c">–</span><span class="c">–</span></div>
         <div class="vf"><span>Schedule · Standings</span><span>This site</span></div>
       </div>
       <div class="eyebrow">How it works</div><div class="word">Follow it<br><span class="r">right here.</span></div>
@@ -650,7 +664,7 @@
     <div class="step" data-step="3">
       <div class="num">STEP 03</div>
       <h3>Games are midweek.</h3>
-      <p>Seven to ten games across the summer, played primarily on Tuesday and Thursday nights. Weekends stay open for tournaments.</p>
+      <p>Ten games a team, Tuesday and Thursday nights from mid-May through July: nine against visiting opponents and one against each other. Weekends stay open for tournaments.</p>
     </div>
     <div class="step" data-step="4">
       <div class="num">STEP 04</div>
@@ -665,13 +679,13 @@
   <div class="head">
     <div>
       <div class="label reveal"><b>02</b> / Teams</div>
-      <h2 class="display reveal" data-d="1">Three teams.<br>One <span class="r">summer.</span></h2>
+      <h2 class="display reveal" data-d="1">Two teams.<br>One <span class="r">summer.</span></h2>
     </div>
     <div class="side reveal" data-d="2"><span class="rule"></span><a class="link" href="#standings">Standings <span class="arr">↗</span></a></div>
   </div>
   <div class="teams" id="teams-grid"></div>
   <div class="teams-foot reveal">
-    <p class="lede">Additional 18U teams from the South Sound are welcome.</p>
+    <p class="lede">Each team plays nine visiting opponents and one game against the other. 18U clubs looking for a date are welcome.</p>
     <a class="link" href="#join" data-contact>Get in touch <span class="arr">↗</span></a>
   </div>
 </section>
@@ -759,9 +773,8 @@ const CONFIG = {
 };
 
 const TEAMS = [
-  { id: "premier",   name: "TBC 18U Premier",      short: "Premier",      coach: "Manjarrez" },
-  { id: "prep",      name: "TBC College Prep 18U", short: "College Prep", coach: "Tanay" },
-  { id: "prospects", name: "TBC Prospects 18U",    short: "Prospects",    coach: "McPheron" }
+  { id: "premier", name: "TBC 18U Premier",      short: "Premier",      coach: "Manjarrez" },
+  { id: "prep",    name: "TBC College Prep 18U", short: "College Prep", coach: "Tanay" }
 ];
 
 const FIELDS = [
@@ -780,10 +793,31 @@ const RHYTHM = [
   { day: "Thu", where: "Peck Field", time: "7:00 PM" }
 ];
 
-// Add one line per game. Leave homeScore/awayScore as null until the game is final.
-// Example:  { date: "2027-06-15", time: "7:00 PM", home: "premier", away: "prep", field: "peck", homeScore: null, awayScore: null },
+// One line per game date. home/away take a team id above ("premier", "prep"), the name of a visiting
+// club in quotes, or "" while the matchup is still open. Fill in homeScore/awayScore once the game is final.
+// Each team plays 10: nine against visiting opponents and one against each other.
 const GAMES = [
+  { date: "2027-05-18", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-05-20", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-05-25", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-06-01", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-06-03", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-06-08", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-06-10", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-06-15", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-06-17", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-06-22", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-06-24", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-06-29", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-07-01", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-07-06", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-07-08", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-07-13", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-07-15", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-07-20", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null },
+  { date: "2027-07-22", time: "7:00 PM", home: "", away: "", field: "peck", homeScore: null, awayScore: null }
 ];
+const GAME_WINDOW = "7:00 – 10:00 PM";
 /* ========================= end of edit block ========================= */
 
 const $ = s => document.querySelector(s);
@@ -840,18 +874,30 @@ $("#rhythm").innerHTML = RHYTHM.map(r => `
       <div class="stamp">COMING SOON</div></div>`;
     return;
   }
-  const rows = [...GAMES].sort((a, b) => a.date.localeCompare(b.date)).map(g => {
-    const home = byId(TEAMS, g.home), away = byId(TEAMS, g.away), field = byId(FIELDS, g.field);
-    const done = g.homeScore != null && g.awayScore != null;
-    const result = done ? `${esc(away.short)} ${g.awayScore} · ${esc(home.short)} ${g.homeScore}` : `<span class="tbd">${esc(g.time || "TBD")}</span>`;
+  const sorted = [...GAMES].sort((a, b) => a.date.localeCompare(b.date));
+  const side = key => key ? (TEAMS.find(t => t.id === key) || { name: key, short: key }) : null;   // team id, visiting club name, or open
+  const rows = sorted.map(g => {
+    const home = side(g.home), away = side(g.away), field = byId(FIELDS, g.field);
+    const done = home && away && g.homeScore != null && g.awayScore != null;
+    const matchup = home && away ? `${esc(away.name)}<span class="at">at</span>${esc(home.name)}`
+                  : home || away ? `${esc((home || away).name)}<span class="at">vs</span><span class="open">opponent to be announced</span>`
+                  : `<span class="open"><span class="long">Matchup to be announced</span><span class="short">Matchup TBA</span></span>`;
+    const result = done ? `${esc(away.short)} ${g.awayScore} · ${esc(home.short)} ${g.homeScore}` : `<span class="tbd">Scheduled</span>`;
     return `<tr><td class="date">${fmtDate(g.date)}</td>
-      <td class="match">${esc(away.name)}<span class="at">at</span>${esc(home.name)}</td>
+      <td class="match">${matchup}</td>
       <td class="where">${esc(field.name)}</td>
       <td class="time">${esc(g.time || "")}</td>
       <td class="result">${result}</td></tr>`;
   }).join("");
-  el.innerHTML = `<table><thead><tr><th>Date</th><th>Matchup</th><th class="where">Field</th><th class="time">Time</th><th>Result</th></tr></thead><tbody>${rows}</tbody></table>
-    <div class="table-note">Visitor listed first · all times Pacific</div>`;
+  const first = fmtDate(sorted[0].date), last = fmtDate(sorted[sorted.length - 1].date);
+  el.innerHTML = `<div class="season-sum">
+      <div><b>${sorted.length}</b><span>Game dates</span></div>
+      <div><b>${esc(first.replace(/^\w+, /, ""))} – ${esc(last.replace(/^\w+, /, ""))}</b><span>Season</span></div>
+      <div><b>${esc(GAME_WINDOW)}</b><span>Every game</span></div>
+      <div><b>10</b><span>Games per team</span></div>
+    </div>
+    <table><thead><tr><th>Date</th><th>Matchup</th><th class="where">Field</th><th class="time">Time</th><th>Result</th></tr></thead><tbody>${rows}</tbody></table>
+    <div class="table-note">Each team plays nine visiting opponents and one game against the other · Visitor listed first · all times Pacific</div>`;
 })();
 
 // standings — computed from final scores in GAMES
@@ -859,9 +905,9 @@ $("#rhythm").innerHTML = RHYTHM.map(r => `
   const table = Object.fromEntries(TEAMS.map(t => [t.id, { t, w: 0, l: 0, tie: 0, rs: 0, ra: 0 }]));
   GAMES.forEach(g => {
     if (g.homeScore == null || g.awayScore == null) return;
-    const h = table[g.home], a = table[g.away]; if (!h || !a) return;
-    h.rs += g.homeScore; h.ra += g.awayScore; a.rs += g.awayScore; a.ra += g.homeScore;
-    if (g.homeScore > g.awayScore) { h.w++; a.l++; } else if (g.awayScore > g.homeScore) { a.w++; h.l++; } else { h.tie++; a.tie++; }
+    const h = table[g.home], a = table[g.away];               // visiting clubs are not in TEAMS and are skipped
+    if (h) { h.rs += g.homeScore; h.ra += g.awayScore; if (g.homeScore > g.awayScore) h.w++; else if (g.homeScore < g.awayScore) h.l++; else h.tie++; }
+    if (a) { a.rs += g.awayScore; a.ra += g.homeScore; if (g.awayScore > g.homeScore) a.w++; else if (g.awayScore < g.homeScore) a.l++; else a.tie++; }
   });
   const rows = Object.values(table);
   const pct = r => { const g = r.w + r.l + r.tie; return g ? (r.w + r.tie / 2) / g : 0; };
@@ -885,7 +931,7 @@ $("#rhythm").innerHTML = RHYTHM.map(r => `
 })();
 
 // reveal on scroll
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12, rootMargin: "0px 0px -8% 0px" });
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0, rootMargin: "0px 0px -6% 0px" });
 document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
 // pinned panel: show the figure for whichever step is nearest the middle of the screen
